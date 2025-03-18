@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding-bottom: 20px;
+        }
+
+        /* ---- APP BAR ---- */
+        .app-bar {
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-bar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ---- BACK BUTTON ---- */
+        .back-button {
+            display: block;
+            margin: 15px 15px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            width: fit-content;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* ---- POST CONTENT ---- */
+        .post-content {
+            padding: 15px;
+            background: white;
+            margin: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-content img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .post-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .post-details {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* ---- COMMENT SECTION ---- */
+        .comment-section {
+            margin-top: 20px;
+        }
+
+        .comment-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        .comment-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+            border: none;
+        }
+
+        .comment-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- APP BAR -->
+    <div class="app-bar">
+        <img src="Img/macosApp.png" alt="School Badge">
+        <div class="app-title">Makerere College School</div>
+    </div>
+
+    <!-- BACK TO HOME BUTTON -->
+    <a href="index.html" class="back-button">Back to Home</a>
+
+    <!-- POST CONTENT -->
+    <div class="post-content">
+        <img src="Img/Screenshot_20250125-174117.jpg" alt="Post Image">
+        <div class="post-title">Macos Rugby team</div>
+        <div class="post-details">
+        Talented sports men in the macos rugby team representing the school in national competitions
+             </div>
+    </div>
+
+  
+
+</body>
+</html>

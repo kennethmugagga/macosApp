@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            text-decoration: none; /* Remove underlines */
+        }
+
+        body {
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        /* ---- APP BAR ---- */
+        .app-bar {
+            background-color: #424242;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-bar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ---- SECTION HEADINGS ---- */
+        .section-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0 10px;
+            padding: 0 15px;
+            color: #333;
+        }
+
+        /* ---- IMAGE SLIDER ---- */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 0.3s ease-out;
+        }
+
+        .slider a {
+            width: 100%; /* Restore original width */
+            height: 100%;
+            flex: 0 0 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* ---- DOT INDICATORS ---- */
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: #007bff;
+        }
+
+        /* ---- HORIZONTAL UTILITY SCROLLER ---- */
+        .utilities-section {
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+            display: flex;
+            gap: 15px;
+            padding: 10px 15px;
+            scrollbar-width: none;
+        }
+
+        .utilities-section::-webkit-scrollbar {
+            display: none;
+        }
+
+        .utility-card {
+            flex: 0 0 45%;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            transition: transform 0.2s;
+        }
+
+        .utility-card:hover {
+            transform: scale(1.05);
+        }
+
+        .utility-card i {
+            font-size: 30px;
+            color: #212121;
+            margin-bottom: 10px;
+        }
+
+        .utility-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- APP BAR -->
+    <div class="app-bar">
+        <img src="Img/macosApp.png" alt="School Badge">
+        <div class="app-title">Makerere College School</div>
+    </div>
+
+    <!-- IMAGE SLIDER SECTION -->
+    <div class="section-heading">School News</div>
+    <div class="slider-container" ontouchstart="touchStart(event)" ontouchend="touchEnd(event)">
+        <div class="slider">
+            <a href="post1.html"><img src="Img/Screenshot_20250125-174256.jpg" alt="Slide 1"></a>
+            <a href="post2.html"><img src="Img/Screenshot_20250125-174340~2.jpg" alt="Slide 2"></a>
+            <a href="post3.html"><img src="Img/Screenshot_20250125-174546~2.jpg" alt="Slide 3"></a>
+            <a href="post4.html"><img src="Img/Screenshot_20250125-174117.jpg" alt="Slide 4"></a>
+              </div>
+        <div class="dots">
+            <div class="dot active" onclick="goToSlide(0)"></div>
+            <div class="dot" onclick="goToSlide(1)"></div>
+            <div class="dot" onclick="goToSlide(2)"></div>
+            <div class="dot" onclick="goToSlide(3)"></div>
+            <div class="dot" onclick="goToSlide(4)"></div>
+        </div>
+    </div>
+
+    <!-- UTILITY CARDS SECTION -->
+    <div class="section-heading">Quick Access</div>
+    <div class="utilities-section">
+        <a href="sh.html" class="utility-card">
+            <i class="fas fa-calendar-alt"></i>
+            <div class="utility-title">Schedules</div>
+        </a>
+
+        <a href="td.html" class="utility-card">
+            <i class="fas fa-book"></i>
+            <div class="utility-title">Termly Details</div>
+        </a>
+
+        <a href="contact.html" class="utility-card">
+            <i class="fas fa-phone-alt"></i>
+            <div class="utility-title">Contact Us</div>
+        </a>
+
+        <a href="rs.html" class="utility-card">
+            <i class="fas fa-folder"></i>
+            <div class="utility-title">Resources</div>
+        </a>
+
+<a href="https://makererecollege.sc.ug" class="utility-card">
+<i class="fas fa-info-circle"></i>
+<div class="utility-title">more about us</div>
+       </a>
+
+        
+     <a href="#" class="utility-card">
+          <i class="fas fa-basketball-ball"></i>
+          <div class="utility-title">Sports</div>
+       </a>
+        
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector(".slider");
+        const dots = document.querySelectorAll(".dot");
+
+        function goToSlide(index) {
+            currentIndex = index;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        let startX = 0;
+        function touchStart(event) {
+            startX = event.touches[0].clientX;
+        }
+
+        function touchEnd(event) {
+            let endX = event.changedTouches[0].clientX;
+            if (endX - startX > 50) goToSlide((currentIndex - 1 + 4) % 4);
+            else if (startX - endX > 50) goToSlide((currentIndex + 1) % 4);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termly Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding-bottom: 20px;
+        }
+
+        /* ---- APP BAR ---- */
+        .app-bar {
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-bar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ---- BACK BUTTON ---- */
+        .back-button {
+            display: block;
+            margin: 15px 15px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            width: fit-content;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* ---- SECTION HEADING ---- */
+        .section-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+            padding: 0 15px;
+            color: #333;
+        }
+
+        /* ---- TERMLY CARDS ---- */
+        .termly-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 15px;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .termly-card:hover {
+            transform: scale(1.05);
+        }
+
+        .termly-card i {
+            font-size: 30px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .termly-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .termly-details {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .termly-date {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- APP BAR -->
+    <div class="app-bar">
+     <img src="Img/macosApp.png" alt="School Badge">
+   
+        
+        
+        <div class="app-title">Makerere College School</div>
+    </div>
+
+    <!-- BACK TO HOME BUTTON -->
+    <a href="index.html" class="back-button">Back to Home</a>
+
+    <!-- TERMLY DETAILS SECTION -->
+    <div class="section-heading">Termly Details</div>
+
+    <!-- Fee Structure -->
+    <div class="termly-card">
+        <i class="fas fa-dollar-sign"></i>
+        <div class="termly-title">Fee Structure</div>
+        <div class="termly-date">Date: January 2025</div>
+        <div class="termly-details">Here is the breakdown of the school fees for the year 2025. It includes tuition, activity fees, and other charges.</div>
+    </div>
+
+    <!-- Term Dates -->
+    <div class="termly-card">
+        <i class="fas fa-calendar-alt"></i>
+        <div class="termly-title">Term Dates</div>
+        <div class="termly-date">Term 1: 1st February – 1st May 2025</div>
+        <div class="termly-details">The start and end dates for Term 1, including mid-term breaks.</div>
+    </div>
+
+    <!-- Payment Deadlines -->
+    <div class="termly-card">
+        <i class="fas fa-clock"></i>
+        <div class="termly-title">Payment Deadlines</div>
+        <div class="termly-date">Deadline: 10th February, 2025</div>
+        <div class="termly-details">Payments for Term 1 are due by this date to avoid penalties.</div>
+    </div>
+
+    <!-- Additional Fees -->
+    <div class="termly-card">
+        <i class="fas fa-info-circle"></i>
+        <div class="termly-title">Additional Fees</div>
+        <div class="termly-date">Date: February 2025</div>
+        <div class="termly-details">Any additional fees required for school activities, trips, and special events.</div>
+    </div>
+
+</body>
+</html>

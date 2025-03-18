@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Soccer Game</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <!-- Import Maps for Three.js and Cannon.js -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.module.js",
+        "cannon": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+      }
+    }
+  </script>
+
+  <script type="module">
+    // Import Three.js and Cannon.js
+    import * as THREE from 'three';
+    import * as CANNON from 'cannon';
+
+    // Scene setup
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Physics world
+    const world = new CANNON.World();
+    world.gravity.set(0, -9.82, 0);
+
+    // Ground
+    const groundGeometry = new THREE.PlaneGeometry(20, 20);
+    const groundMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
+    const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
+    scene.add(groundMesh);
+
+    const groundBody = new CANNON.Body({
+      mass: 0, // Static body
+      shape: new CANNON.Plane(),
+    });
+    groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0); // Rotate to lay flat
+    world.addBody(groundBody);
+
+    // Ball
+    const ballGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+    const ballMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const ballMesh = new THREE.Mesh(ballGeometry, ballMaterial);
+    scene.add(ballMesh);
+
+    const ballBody = new CANNON.Body({
+      mass: 1,
+      shape: new CANNON.Sphere(0.5),
+    });
+    ballBody.position.set(0, 5, 0); // Start above the ground
+    world.addBody(ballBody);
+
+    // Camera position
+    camera.position.set(0, 10, 15);
+    camera.lookAt(0, 0, 0);
+
+    // Lighting
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(10, 10, 10);
+    scene.add(light);
+
+    // Keyboard controls
+    const keys = { ArrowUp: false, ArrowDown: false, ArrowLeft: false, ArrowRight: false };
+    window.addEventListener('keydown', (e) => keys[e.code] = true);
+    window.addEventListener('keyup', (e) => keys[e.code] = false);
+
+    // Game loop
+    const animate = () => {
+      requestAnimationFrame(animate);
+
+      // Apply force based on keys
+      const forceStrength = 10;
+      if (keys.ArrowUp) ballBody.applyForce(new CANNON.Vec3(0, 0, -forceStrength), ballBody.position);
+      if (keys.ArrowDown) ballBody.applyForce(new CANNON.Vec3(0, 0, forceStrength), ballBody.position);
+      if (keys.ArrowLeft) ballBody.applyForce(new CANNON.Vec3(-forceStrength, 0, 0), ballBody.position);
+      if (keys.ArrowRight) ballBody.applyForce(new CANNON.Vec3(forceStrength, 0, 0), ballBody.position);
+
+      // Update physics
+      world.step(1 / 60);
+
+      // Sync Three.js objects with Cannon.js bodies
+      ballMesh.position.copy(ballBody.position);
+      ballMesh.quaternion.copy(ballBody.quaternion);
+
+      // Render
+      renderer.render(scene, camera);
+    };
+
+    animate();
+  </script>
+</body>
+</html>

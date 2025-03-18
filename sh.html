@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedules</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding-bottom: 20px;
+        }
+
+        /* ---- APP BAR ---- */
+        .app-bar {
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-bar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ---- BACK BUTTON ---- */
+        .back-button {
+            display: block;
+            margin: 15px 15px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            width: fit-content;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* ---- SECTION HEADING ---- */
+        .section-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+            padding: 0 15px;
+            color: #333;
+        }
+
+        /* ---- SCHEDULE CARDS ---- */
+        .schedule-card {
+            background: white;
+            padding: 20px;
+            margin: 15px 15px;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .schedule-card:hover {
+            transform: scale(1.05);
+        }
+
+        .schedule-card i {
+            font-size: 30px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .schedule-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .schedule-date {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .schedule-details {
+            font-size: 14px;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- APP BAR -->
+    <div class="app-bar">
+    <img src="Img/macosApp.png" alt="School Badge">
+  
+        
+        
+        <div class="app-title">Makerere College School</div>
+    </div>
+
+    <!-- BACK TO HOME BUTTON -->
+    <a href="index.html" class="back-button">Back to Home</a>
+
+    <!-- SCHEDULES SECTION -->
+    <div class="section-heading">School Schedules</div>
+
+    <!-- Visitation Days -->
+    <div class="schedule-card">
+        <i class="fas fa-calendar-check"></i>
+        <div class="schedule-title">A Level Visitation</div>
+        <div class="schedule-date">Date: 5th February, 2025</div>
+        <div class="schedule-details">Parents are invited to visit A Level students to discuss progress.</div>
+    </div>
+
+    <!-- Class Meetings -->
+    <div class="schedule-card">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <div class="schedule-title">Class Meeting: S2 Biology</div>
+        <div class="schedule-date">Date: 10th February, 2025</div>
+        <div class="schedule-details">A meeting for the S2 Biology class to discuss upcoming exams and projects.</div>
+    </div>
+
+    <!-- End of Term -->
+    <div class="schedule-card">
+        <i class="fas fa-calendar-day"></i>
+        <div class="schedule-title">End of Term</div>
+        <div class="schedule-date">Date: 28th March, 2025</div>
+        <div class="schedule-details">The term ends, with final assessments and preparation for holidays.</div>
+    </div>
+
+    <!-- Trips -->
+    <div class="schedule-card">
+        <i class="fas fa-map-signs"></i>
+        <div class="schedule-title">S2 Biology Trip</div>
+        <div class="schedule-date">Date: 15th February, 2025</div>
+        <div class="schedule-details">The S2 Biology class will go on a field trip to the National Botanical Gardens.</div>
+    </div>
+
+</body>
+</html>

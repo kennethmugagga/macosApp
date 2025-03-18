@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            padding-bottom: 20px;
+        }
+
+        /* ---- APP BAR ---- */
+        .app-bar {
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-bar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ---- BACK BUTTON ---- */
+        .back-button {
+            display: block;
+            margin: 15px 15px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            width: fit-content;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* ---- SECTION HEADING ---- */
+        .section-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+            padding: 0 15px;
+            color: #333;
+        }
+
+        /* ---- RESOURCE GRID ---- */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .resource-card:hover {
+            transform: scale(1.05);
+        }
+
+        .resource-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .resource-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- APP BAR -->
+    <div class="app-bar">
+       <img src="Img/macosApp.png" alt="School Badge">
+  
+               
+           
+             <div class="app-title">Makerere College School</div>
+        
+   
+    </div>
+
+    <!-- BACK TO HOME BUTTON -->
+    <a href="index.html" class="back-button">Back to Home</a>
+
+    <!-- RESOURCES SECTION -->
+    <div class="section-heading">Downloadable Resources</div>
+
+    <div class="resource-grid">
+        <!-- Resource 1 -->
+        <div class="resource-card">
+            <img src="https://cdn.pixabay.com/photo/2017/01/31/17/57/book-2022464_1280.png" alt="Math Book">
+            <div class="resource-title">Math Textbook</div>
+            <a href="https://example.com/math-textbook.pdf" class="download-button" download>Download PDF</a>
+        </div>
+
+        <!-- Resource 2 -->
+        <div class="resource-card">
+            <img src="https://cdn.pixabay.com/photo/2018/02/04/23/28/biology-3136191_1280.jpg" alt="Biology Notes">
+            <div class="resource-title">Biology Notes</div>
+            <a href="https://example.com/biology-notes.pdf" class="download-button" download>Download PDF</a>
+        </div>
+
+        <!-- Resource 3 -->
+        <div class="resource-card">
+            <img src="https://cdn.pixabay.com/photo/2016/10/09/19/19/book-1725960_1280.jpg" alt="Physics Guide">
+            <div class="resource-title">Physics Guide</div>
+            <a href="https://example.com/physics-guide.pdf" class="download-button" download>Download PDF</a>
+        </div>
+
+        <!-- Resource 4 -->
+        <div class="resource-card">
+            <img src="https://cdn.pixabay.com/photo/2016/10/27/09/24/book-1772128_1280.jpg" alt="Chemistry Handbook">
+            <div class="resource-title">Chemistry Handbook</div>
+            <a href="https://example.com/chemistry-handbook.pdf" class="download-button" download>Download PDF</a>
+        </div>
+    </div>
+
+</body>
+</html>
